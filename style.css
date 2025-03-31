@@ -1,20 +1,108 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: 
-      linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-      url("assets/background.jpg") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: 
+  linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+  url("assets/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Handlee', cursive;
+  scroll-behavior: smooth;
+}
+  
+/* ✨ Container holds title, subtitle, and buttons */
+.container {
+  text-align: center;
+  padding-top: 60px;           /* push content into the sky */
+  padding-bottom: 40px;
+  color: #222;
+  text-shadow: 1px 1px #fff;
+}
+
+/* ✨ Title spacing */
+.container h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✨ Subtitle spacing */
+.subtitle {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 40px;  /* space between subtitle and buttons */
+}
+
+/* Nav buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 100px;
+}
+
+  .nav-buttons a {
+    margin: 5px 12px;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: #fff6fa;
+    border: 2px solid #ffb6d2;
+    color: #d44880;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
   }
   
-  .container {
-    text-align: center;
+  .nav-buttons a:hover {
+    background: #ffb6d2;
+    color: white;
   }
+
   
+
+/* Each section as full screen page */
+section {
+  height: 100vh;
+  width: 100%;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+/* Section content style */
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+section p, section ul {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
   .card {
     background: linear-gradient(135deg, #FFC9E3 50%, #F2D8F0 50%);
     width: 90%;
@@ -79,7 +167,6 @@ body {
   }
   
   
-  
   .btn {
     padding: 10px 20px;
     border-radius: 20px;
@@ -133,7 +220,69 @@ body {
     color: #555;
     margin-top: 10px;
   }
+
+  .walk-cycle {
+    position: absolute;
+    bottom: 20px;
+    left: -100px;
+    width: 300px;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    animation: walkAndStop 5s ease-out forwards; /* plays once & stops */
+    image-rendering: pixelated;
+  }
   
+  /* 👣 She walks in and stops in place */
+  @keyframes walkAndStop {
+    0% { left: -100px; }
+    100% { left: 80vw; }
+  }
+  
+  .walk-bubble {
+    position: absolute;
+    bottom: 360px;
+    left: 80vw; /* adjust to match where your character stops */
+    background: #ffe9f4; /* soft pastel pink */
+    border: 2px solid #ffb6d2;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #5c1a3a;
+    font-family: 'Handlee', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    z-index: 20;
+    animation: bubbleFadeIn 0.8s ease-out 4s forwards;
+    position: absolute;
+  }
+
+  /* 💬 Little tail under the bubble */
+.walk-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ffe9f4; /* matches background */
+}
+  
+  /* 👇 just fades it in once and leaves it */
+  @keyframes bubbleFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  
+  @keyframes floatyTalk {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+  }
+  
+  
+
   /* 💡 Mobile Responsive */
   @media (max-width: 768px) {
     .card {
@@ -146,3 +295,15 @@ body {
     }
   }
   
+  /* Ensure full height intro section */
+.intro-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
