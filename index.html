@@ -7,6 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+  function toggleBubbles() {
+    const menu = document.getElementById("bubbleMenu");
+    if (menu.style.display === "flex") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "flex";
+    }
+  }
+</script>
 <body>
 
   <div class="intro-section">
@@ -55,6 +65,16 @@
       <li>🧁 Pixel Art</li>
     </ul>
   </section>
+<!-- 🌸 Floating Nav Bubble -->
+<div class="bubble-nav">
+  <button class="main-bubble" onclick="toggleBubbles()">☁</button>
+  <div class="bubble-links" id="bubbleMenu">
+    <a href="#about" title="About Me">💖</a>
+    <a href="#resume" title="Resume">📄</a>
+    <a href="#projects" title="Projects">🛠️</a>
+    <a href="#skills" title="Skills">🌸</a>
+  </div>
+</div>
 
 </body>
 </html>

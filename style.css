@@ -307,3 +307,65 @@ ul li {
   position: relative;
   z-index: 1;
 }
+
+.bubble-nav {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1000;
+}
+
+.main-bubble {
+  background: #ffe0f0;
+  color: #d44880;
+  border: 2px solid #ffb6d2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.main-bubble:hover {
+  transform: scale(1.1);
+}
+
+.bubble-links {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.bubble-links a {
+  background: #fff6fa;
+  border: 2px solid #ffb6d2;
+  color: #d44880;
+  text-decoration: none;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.bubble-links a:hover {
+  background: #ffb6d2;
+  color: white;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
