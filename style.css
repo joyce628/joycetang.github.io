@@ -296,17 +296,17 @@ ul li {
   }
   
   /* Ensure full height intro section */
-.intro-section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-}
+  .intro-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Push content to the top */
+    align-items: center;
+    padding-top: 80px;
+    text-align: center;
+  }
+  
 
 .bubble-nav {
   position: fixed;
@@ -319,9 +319,11 @@ ul li {
   background: #ffe0f0;
   color: #d44880;
   border: 2px solid #ffb6d2;
-  border-radius: 50%;
-  width: 60px;
+  border-radius: 20%;
+  width: 100px;
   height: 60px;
+  font-family: 'Handlee', cursive;
+  margin-left:0px;
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -349,9 +351,10 @@ ul li {
   color: #d44880;
   text-decoration: none;
   font-size: 20px;
-  width: 50px;
+  font-family: 'Handlee', cursive;
+  width: 100px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
